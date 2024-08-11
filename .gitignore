@@ -1,3 +1,6 @@
+# Avoid importing datasets placed in datasets folder
+datasets/**
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
