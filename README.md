@@ -31,6 +31,7 @@ To run this project, you will need Python installed on your machine along with t
 
 ```bash
 pip install -r requirements.txt
+```
 
 ## Authors
 
