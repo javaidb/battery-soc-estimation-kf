@@ -13,7 +13,7 @@ This repository serves as a personal self-study initiative aimed at deepening my
 ## Project Structure
 
 This project is organized into several directories, each serving a specific purpose:
-
+```
 battery_estimation/
 ├── data/ # Directory for storing datasets (if applicable)
 ├── models/ # Contains modules for SOC and SOH estimation
@@ -22,7 +22,7 @@ battery_estimation/
 │ └── battery_estimation.ipynb # Main notebook for testing and visualization
 ├── README.md # Project overview and documentation
 └── requirements.txt # List of dependencies required to run the project
-
+```
 ## Getting Started
 
 ### Prerequisites
@@ -46,7 +46,5 @@ pip install -r requirements.txt
 Models built on TensorFlow and modeled on datasets [LG 18650HG2](https://data.mendeley.com/datasets/cp3473x7xv/3) and  [Panasonic 18650PF](https://data.mendeley.com/datasets/wykht8y7tg/1).
 
 ## Badges
-
-Add badges from somewhere like: [shields.io](https://shields.io/)
 
 [![IBM License](https://img.shields.io/badge/Certificate_ML-IBM-green.svg)](https://www.credly.com/badges/6d82b78c-cade-4a4c-94cb-b7f89e142350/public_url)
