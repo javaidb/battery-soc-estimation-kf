@@ -103,3 +103,45 @@ def create_dynamic_line_plots(data_list, timebase, general_fig_title = "Battery 
         fig.update_xaxes(title_text=timebase.get('label', 'Time'), row=row, col=col)
 
     fig.show()
+    
+def create_single_fig_line_plot(data_list, timebase, general_fig_title = "Battery Simulation Data Overview"):
+    """
+    Create a single line plot using Plotly for multiple datasets.
+
+    Parameters:
+        data_list (list): A list of dictionaries with 'label' and 'data' keys.
+        timebase (dict): A dictionary with 'label' and 'data' keys, where 'data' is a list of time values.
+
+    Returns:
+        None: Displays the generated plot.
+    """
+    
+    # Extract time data from the provided timebase dictionary
+    time_data = timebase.get('data', [])
+    
+    # Create figure
+    fig = go.Figure()
+
+    # Add traces for each dataset in data_list
+    for data in data_list:
+        fig.add_trace(
+            go.Scatter(
+                x=time_data,
+                y=data['data'],
+                mode='lines',
+                name=data['label']
+            )
+        )
+
+    # Update layout
+    fig.update_layout(
+        height=400,
+        width=1000,
+        title=general_fig_title,
+        xaxis_title=timebase.get('label', 'Time'),
+        yaxis_title="Value",
+        showlegend=True
+    )
+
+    # Show the figure
+    fig.show()
