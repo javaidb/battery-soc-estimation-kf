@@ -5,4 +5,7 @@ def coulomb_counting(current, time, initial_soc_percent, capacity):
     dt = np.diff(time)
     charge = np.cumsum(current[1:] * dt)
     soc = initial_soc - charge / (capacity * 3600)
-    return 100*np.clip(soc, 0, 1)
+    return {
+        "label": "State of Charge via Coul. Cnt (%)",
+        "data": np.clip(soc, 0, 1)
+    }
