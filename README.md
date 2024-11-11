@@ -14,14 +14,14 @@ This repository serves as a personal self-study initiative aimed at deepening my
 
 This project is organized into several directories, each serving a specific purpose:
 ```
-battery_estimation/
-├── data/ # Directory for storing datasets (if applicable)
-├── models/ # Contains modules for SOC and SOH estimation
-├── utils/ # Utility functions for data generation and processing
-├── notebooks/ # Jupyter notebooks for interactive exploration
-│ └── battery_estimation.ipynb # Main notebook for testing and visualization
-├── README.md # Project overview and documentation
-└── requirements.txt # List of dependencies required to run the project
+    battery_estimation/
+    ├── data/                # Directory for storing datasets (if applicable)
+    ├── models/              # Contains modules for SOC and SOH estimation
+    ├── utils/               # Utility functions for data generation and processing
+    ├── notebooks/           # Jupyter notebooks for interactive exploration
+    │   └── battery_estimation.ipynb  # Main notebook for testing and visualization
+    ├── README.md            # Project overview and documentation
+    └── requirements.txt     # List of dependencies required to run the project
 ```
 ## Getting Started
 
