@@ -47,4 +47,6 @@ Models built on TensorFlow and modeled on datasets [LG 18650HG2](https://data.me
 
 ## Badges
 
-[![IBM License](https://img.shields.io/badge/Certificate_ML-IBM-green.svg)](https://www.credly.com/badges/6d82b78c-cade-4a4c-94cb-b7f89e142350/public_url)
+[![IBM License](https://img.shields.io/badge/Certificate_ML-IBM-blue.svg)](https://www.credly.com/badges/6d82b78c-cade-4a4c-94cb-b7f89e142350/public_url)
+[![SOC Estimation](https://img.shields.io/badge/Certificate_SOC-CU-c0ae88.svg)](https://coursera.org/share/b6b06ac95cd73bc569d8a6530130b154)
+[![SOH Estimation](https://img.shields.io/badge/Certificate_SOH-CU-c0ae88.svg)](https://coursera.org/share/784a52ce9a135d3068b94ad406ab038a)
