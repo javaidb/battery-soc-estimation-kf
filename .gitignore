@@ -132,6 +132,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.venv_batt_modeling
 
 # Spyder project settings
 .spyderproject
