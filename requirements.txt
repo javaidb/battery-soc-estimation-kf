@@ -1,3 +1,5 @@
 numpy
 matplotlib
-jupyter
+ipywidgets
+plotly
+pybamm==24.9
