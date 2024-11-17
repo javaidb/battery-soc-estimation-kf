@@ -15,8 +15,14 @@ def change_pybamm_param_capacity(parameter_values, capacity_Ah_new):
 
 def generate_ocv_soc_lookup_table(capacity_Ah, c_rate=1/100):
 
-    save_path = os.path.join(os.path.dirname(os.getcwd()), 'datasets', f'ocv_soc_mapping_pybamm_{capacity_Ah}Ah.pkl')
-
+    file_name = f'ocv_soc_mapping_pybamm_{capacity_Ah}Ah.pkl'
+    
+    parent_dir = os.path.dirname(os.getcwd())
+    datasets_path = os.path.join(parent_dir, 'datasets')
+    if not os.path.exists(datasets_path):
+        os.mkdir(datasets_path)
+        
+    save_path = os.path.join(datasets_path, file_name)
     if not os.path.exists(save_path):
         # Define the SOC range from 0 to 1 (0% to 100%)
         socs = np.linspace(0, 1, 101)  # 101 points for 1% resolution
