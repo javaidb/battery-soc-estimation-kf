@@ -15,11 +15,11 @@ This repository serves as a personal self-study initiative aimed at deepening my
 This project is organized into several directories, each serving a specific purpose:
 ```
     battery_estimation/
-    ├── data/                # Directory for storing datasets (if applicable)
+    ├── datasets/                # Directory for storing datasets (autopopulated after running nb)
     ├── models/              # Contains modules for SOC and SOH estimation
     ├── utils/               # Utility functions for data generation and processing
     ├── notebooks/           # Jupyter notebooks for interactive exploration
-    │   └── battery_estimation.ipynb  # Main notebook for testing and visualization
+    │   └── soc_est_comparisons.ipynb  # Main notebook for testing and visualization
     ├── README.md            # Project overview and documentation
     └── requirements.txt     # List of dependencies required to run the project
 ```
@@ -27,7 +27,10 @@ This project is organized into several directories, each serving a specific purp
 
 ### Prerequisites
 
-To run this project, you will need Python installed on your machine along with the required libraries. You can install the dependencies using the following command:
+To run this project, you will need Python installed on your machine along with the required libraries. Current version utilizations neing utilzied locally are as follows:
+- Python (3.11.7)
+
+Otherwise, you can install the dependencies using the following command:
 
 ```bash
 pip install -r requirements.txt
