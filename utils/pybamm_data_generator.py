@@ -80,13 +80,13 @@ def generate_ocv_soc_lookup_table(capacity_Ah, c_rate=1/100):
         """Interpolates the y value for a given x value."""
         if value < soc_values[0] or value > soc_values[-1]:
             raise ValueError("Value is outside the interpolation range.")
-        return np.interp(value, ocv_interpolated_chg, soc_resolution)
+        return np.interp(value, soc_resolution, ocv_interpolated_chg)
     
     def interpolate_dchg(value):
         """Interpolates the y value for a given x value."""
         if value < soc_values[0] or value > soc_values[-1]:
             raise ValueError("Value is outside the interpolation range.")
-        return np.interp(value, ocv_interpolated_dchg, soc_resolution)
+        return np.interp(value, soc_resolution, ocv_interpolated_dchg)
     
     return interpolate_chg, interpolate_dchg
 
