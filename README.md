@@ -14,7 +14,7 @@ This repository serves as a personal self-study initiative aimed at deepening my
 
 This project is organized into several directories, each serving a specific purpose:
 ```
-    battery_estimation/
+    battery-state-estimation/
     ├── datasets/                # Directory for storing datasets (autopopulated after running nb)
     ├── models/              # Contains modules for SOC and SOH estimation
     ├── utils/               # Utility functions for data generation and processing
@@ -29,6 +29,7 @@ This project is organized into several directories, each serving a specific purp
 
 To run this project, you will need Python installed on your machine along with the required libraries. Current version utilizations neing utilzied locally are as follows:
 - Python (3.11.7)
+- Virtual environment created using Python 3.11 (Not required but suggested)
 
 Otherwise, you can install the dependencies using the following command:
 
