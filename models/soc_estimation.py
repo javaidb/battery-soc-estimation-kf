@@ -48,22 +48,11 @@ def linKF_VSOC(ocv_measurements, current_measurements, dt, OCV_lookup_fn,
     
     SOC_estimates = []
     other_var_tracking = []
-
-    def merge_dicts(dicts):
-        merged = {}
-        for d in dicts:
-            for key, value in d.items():
-                merged.setdefault(key, []).append(value)
-        return merged
     
     for k in range(len(ocv_measurements)):
         
         # Control input (current applied to the battery)
         u = current_measurements[k]  # Current in Amperes
-        # Measured voltage (from battery)
-        V_m = ocv_measurements[k]  # Measured voltage in Volts
-        # Open Circuit Voltage (OCV) reference for SOC estimation from voltage
-        z = OCV_lookup_fn(V_m)/100  # Measured SOC derived from voltage (assumed)
         
         ### Prediction Steps ###
         # 1. State Prediction Time Update
@@ -73,14 +62,18 @@ def linKF_VSOC(ocv_measurements, current_measurements, dt, OCV_lookup_fn,
         P_pred = A @ P_prev @ A.T + Q  # Predict error covariance
         
         # 3. Predict System Output
-        y_pred = C @ x_pred  # Predicted measurement based on predicted state
+        y_pred = OCV_lookup_fn(x_prev[0][0]*100)  # Predicted measurement based on predicted state
         
         ### Correction Steps ###
+        
+        # Measured voltage (from battery)
+        V_m = ocv_measurements[k]  # Measured voltage in Volts
+        
         # 4. Estimator Gain Matrix
         K = P_pred @ C.T @ np.linalg.inv(C @ P_pred @ C.T + R)  # Kalman gain
-        
+
         # 5. State Update with Measurement
-        x_new = x_pred + K @ (z - y_pred)   # Update state estimate with measurement
+        x_new = x_pred + K @ np.array([[(V_m - y_pred)]])   # Update state estimate with measurement
         
         # 6. Error Variance Measurement Update
         P_new = (np.eye(len(K)) - K @ C) @ P_pred  # Update error covariance
@@ -94,11 +87,19 @@ def linKF_VSOC(ocv_measurements, current_measurements, dt, OCV_lookup_fn,
             "K" : K,
             "x_new" : x_new,
             "P_new" : P_new,
-            "z" : z,
+            "z" : V_m,
         })
         
         # Prepare for next iteration
         x_prev, P_prev = np.clip(x_new, 0, 1), P_new
+
+    def merge_dicts(dicts):
+        merged = {}
+        for d in dicts:
+            for key, value in d.items():
+                merged.setdefault(key, []).append(value)
+        return merged
+    
     other_var_tracking_out = merge_dicts(other_var_tracking)
         
     return {
