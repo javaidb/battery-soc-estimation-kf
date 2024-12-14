@@ -120,7 +120,7 @@ class PyBAMMDataset():
             soc_resolution = np.arange(0, 101, 1)  # From 0% to 100%
             ocv_interpolated_chg = np.interp(soc_resolution, soc_values, chg_v)
             
-            dchg_v = dchg_sim.solution["Battery open-circuit voltage [V]"].entries
+            dchg_v = dchg_sim.solution["Battery open-circuit voltage [V]"].entries[::-1]
             num_ocv_points_dchg = len(chg_v)
             soc_values = np.linspace(0, 100, num_ocv_points_dchg)
             soc_resolution = np.arange(0, 101, 1)  # From 0% to 100%
