@@ -24,10 +24,10 @@ class StateEstimator():
 
     def __determine_hysteresis(self, current_arr):
         if np.mean(current_arr) < 0:
-            print("Current function interpreted as 'charge' for lookup fns.")
+            # print("Current function interpreted as 'charge' for lookup fns.")
             return 'chg'
         elif np.mean(current_arr) > 0:
-            print("Current function interpreted as 'discharge' for lookup fns.")
+            # print("Current function interpreted as 'discharge' for lookup fns.")
             return 'dchg'
 
     def __determine_lookup_fn(self, current_arr):
