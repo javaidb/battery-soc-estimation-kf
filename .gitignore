@@ -1,5 +1,6 @@
-# Avoid importing datasets placed in datasets folder
+# Avoid importing datasets placed in datasets or in notebooks/dev folder
 datasets/**
+notebooks/dev/**
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
