@@ -22,17 +22,27 @@ class StateEstimator():
             "data": np.clip(soc_with_initial, 0, 1)
         }
 
+    def __determine_hysteresis(self, current_arr):
+        if np.mean(current_arr) < 0:
+            print("Current function interpreted as 'charge' for lookup fns.")
+            return 'chg'
+        elif np.mean(current_arr) > 0:
+            print("Current function interpreted as 'discharge' for lookup fns.")
+            return 'dchg'
+
     def __determine_lookup_fn(self, current_arr):
         if self.__determine_hysteresis(current_arr) == 'chg': return self.SOCfromOCV_fn_chg
         elif self.__determine_hysteresis(current_arr) == 'dchg': return self.SOCfromOCV_fn_dchg
 
-    def __determine_hysteresis(self, current_arr):
-        if np.mean(current_arr) < 0:
-            return 'chg'
-        elif np.mean(current_arr) > 0:
-            return 'dchg'
-
-    def linKF_OCVSOC(self, SOC_initial=None, P_initial=None, Q=None, R=None):
+    def linKF_OCVSOC(
+            self,
+            ocv_data=None,
+            current_data=None,
+            SOC_initial=None, 
+            P_initial=None, 
+            Q=None, 
+            R=None
+        ):
         """
         Estimate the State of Charge (SOC) using a Kalman filter.
 
@@ -52,8 +62,12 @@ class StateEstimator():
         
         # Initialize parameters
         if SOC_initial is None:
-             SOC_initial = self.Dataset.initial_soc_percent/100
-
+            SOC_initial = self.Dataset.initial_soc_percent/100
+        if ocv_data is None:
+            ocv_data = self.Dataset.data.ocv["data"]
+        if current_data is None:
+            current_data = self.Dataset.data.current["data"]
+    
         if P_initial is None:
             P_initial = np.array([[1]])  # Default initial error covariance
         if Q is None:
@@ -72,9 +86,7 @@ class StateEstimator():
         
         SOC_estimates = []
         other_var_tracking = []
-        
-        ocv_data = self.Dataset.data.ocv["data"]
-        current_data = self.Dataset.data.current["data"]
+
         ocvtosoc_lookup_fn = self.__determine_lookup_fn(current_data)
 
         for k in range(len(ocv_data)):
