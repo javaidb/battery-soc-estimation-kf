@@ -49,6 +49,12 @@ pip install -r requirements.txt
 
 Models built on TensorFlow and modeled on datasets [LG 18650HG2](https://data.mendeley.com/datasets/cp3473x7xv/3) and  [Panasonic 18650PF](https://data.mendeley.com/datasets/wykht8y7tg/1).
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/832b4082-f77e-449e-8dfc-c60f540236a7" width="200" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/6cb16e14-da65-4f08-944d-1b967c563e4e" width="120" />
+</p>
+
 ## Badges
 
 [![IBM License](https://img.shields.io/badge/Certificate_ML-IBM-blue.svg)](https://www.credly.com/badges/6d82b78c-cade-4a4c-94cb-b7f89e142350/public_url)
