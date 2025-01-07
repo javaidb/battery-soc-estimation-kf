@@ -50,9 +50,13 @@ pip install -r requirements.txt
 Models built on TensorFlow and modeled on datasets [LG 18650HG2](https://data.mendeley.com/datasets/cp3473x7xv/3) and  [Panasonic 18650PF](https://data.mendeley.com/datasets/wykht8y7tg/1).
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/832b4082-f77e-449e-8dfc-c60f540236a7" width="200" />
+  <img src="https://github.com/user-attachments/assets/832b4082-f77e-449e-8dfc-c60f540236a7" alt="PyBaMM Logo"  width="200" />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/user-attachments/assets/6cb16e14-da65-4f08-944d-1b967c563e4e" width="120" />
+  <img src="https://github.com/user-attachments/assets/5f1414f3-bf3f-4a16-8299-e6b3bd6559a3" alt="CU-Boulder Logo" width="70" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/6947a031-5d77-4078-bbf1-9eca9e70da10" alt="Tensorflow Logo"  width="200" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/6cb16e14-da65-4f08-944d-1b967c563e4e" alt="SkLearn Logo"  width="120" />
 </p>
 
 ## Badges
