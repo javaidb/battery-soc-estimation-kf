@@ -1,11 +1,10 @@
+# Battery State Estimation using Kalman Filters (SOC)
 
-# Battery State Estimation Projects (SOX)
-
-This repository serves as a personal self-study initiative aimed at deepening my understanding of lithium-ion battery management systems. Through this project, I aim to gain practical experience in exploring SOC and SOH estimation techniques while identifying areas for self-improvement in my own knowledge and skills. It is designed more so as a sandbox for me to develop, test and implement state estimation techniques for various sample li-ion batteries.
+> This repository is a part of a series of repositories aimed at deepening personal understanding of lithium-ion battery management systems along with practical implementations and contexts. Through this repo, SOC estimation techniques using KFs are explored for me to expand on experience learnt in career + courses + self-learning while identifying areas for self-improvement in my own knowledge and skills. It is designed more so as a sandbox for me to develop, test and implement state estimation techniques for various sample li-ion batteries.
 
 ## Objectives (aimed at addressing areas for self-improvement)
 
-- **Learn**: Gain knowledge about simple SOX estimatino techniques, and branch towards more sophisticated SOC estimation techniques, such as Extended Kalman Filters or machine learning-based approaches.
+- **Learn**: Gain knowledge about simple SOC estimatino techniques using KFs, and branch towards more sophisticated SOC estimation techniques, such as Extended Kalman Filters or machine learning-based approaches.
 - **Account for Real Life**: Explore how to work with real-world battery datasets with variable quality to validate models and improve accuracy.
 - **KPIs**: Understand key performance indicators for BMS, including efficiency and reliability metrics.
 - **Avoid obsolence**: Testing either recent software solutions or published theories from papers to calibrate understanding to latest global view.
@@ -27,10 +26,18 @@ This project is organized into several directories, each serving a specific purp
 
 ### Prerequisites
 
-To run this project, you will need Python installed on your machine along with the required libraries. Current version utilizations neing utilzied locally are as follows:
+To run this project, you will need Python installed on your machine along with the required libraries. Current version utilizations being utilzied locally are as follows:
 - Python (3.11.7)
 - Virtual environment created using Python 3.11 (Not required but suggested)
 
+To create and activate virtual environment:
+
+```bash
+python -m venv .venv_batt_modeling
+source .venv_batt_modeling/bin/activate  # Linux/Mac
+# or
+.venv_batt_modeling\Scripts\activate  # Windows
+```
 Otherwise, you can install the dependencies using the following command:
 
 ```bash
